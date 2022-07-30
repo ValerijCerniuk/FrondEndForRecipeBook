@@ -1,0 +1,36 @@
+<p>Home work</p>
+<div class="app">
+  <div class="container mb-5 mt-5">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let recipe of recipes; let index = index">
+        <div class="card mt-3">
+          <div class="product-1 align-items-center p-2 text-center">
+            <div class="image-container">
+              <img class="xyz rounded" src="assets/productUno1.jpg" width="200"/>
+              <img class="xyz-replacement rounded" src="assets/productUno2.jpg" width="200"/>
+            </div>
+            <h5>{{recipe.name}}</h5>
+            <div class="mt-3 info">
+              <span class="text1 d-block">{{recipe.description}}</span>
+            </div>
+            <div class="sm-1 text-dark">
+              <div class="row">
+                <div class="col-sm-4" *ngFor="let ingredient of recipe.ingredients; let count = count">
+                  <span>{{ingredient.name}}</span>
+                  <div class="is-clearfix" *ngIf="count % 2 == 0"></div>
+                </div>
+              </div>
+            </div>
+            <div class="p-3 bg-success text-center text-white mt-3 cursor cart">
+                        <span class="text-uppercase cart-text">
+                          <a style="color: white; text-decoration: none;"
+                             routerLink="/show-recipe/{{recipe.id}}">Read</a>
+                          </span>
+            </div>
+          </div>
+          <div class="is-clearfix" *ngIf="index % 3 == 0"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

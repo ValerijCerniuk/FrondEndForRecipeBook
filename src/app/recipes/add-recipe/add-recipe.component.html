@@ -1,0 +1,26 @@
+<p>add-recipe works!</p>
+<div class="container" style="margin-top: 50px;">
+<form [formGroup]="recipeForm" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="recipe-name" class="form-label">Name</label>
+        <input type="text" class="form-control w-25" id="recipe-name" placeholder="recipe name" formControlName="name">
+    </div>
+
+      <div class="mb-3">
+        <label for="recipe-description" class="form-label">Description</label>
+        <textarea type="text" class="form-control w-25" id="recipe-description" placeholder="recipe description" formControlName="description"></textarea>
+      </div>
+<!-- turi but pasirinkimas is listo i kita list ir jo issaugoimas naujam recepre  -->
+      <div class="mb-3">
+        <label for="recipe-stages" class="form-label">Stages</label>
+        <input type="text-area" class="form-control w-25" id="recipe-stages" placeholder="recipe stages">
+      </div>
+
+      <div class="mb-3">
+        <label for="recipe-ingredients" class="form-label">Ingredients</label>
+        <input type="text" class="form-control w-25" id="recipe-ingredients" placeholder="recipe ingredients">
+      </div>
+      <button type="submit" value = "submit" class="btn btn-primary">Save</button>
+</form>
+
+</div>

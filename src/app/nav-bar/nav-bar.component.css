@@ -1,0 +1,11 @@
+
+.bar-tag{
+    font-family: cursive;
+    font-size: 30px;
+    color: forestgreen;
+}
+
+a:hover{
+    background-color: aquamarine;
+    border-radius: 15px;
+}
