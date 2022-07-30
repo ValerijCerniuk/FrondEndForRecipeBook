@@ -14,6 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { SortByPipe } from './shared/pipes/sort-by.pipe';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditStageModalComponent } from './shared/modals/edit-stage-modal/edit-stage-modal.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
     EditRecipeComponent,
     ShowRecipeComponent,
     AboutComponent,
-    SortByPipe
+    SortByPipe,
+    EditStageModalComponent
   ],
   imports: [
     BrowserModule,
@@ -36,6 +38,9 @@ import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
   
   ],
   providers: [SortByPipe,NgbActiveModal],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[
+    EditStageModalComponent
+  ],
 })
 export class AppModule { }

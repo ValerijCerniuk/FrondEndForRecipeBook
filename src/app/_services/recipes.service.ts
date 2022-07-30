@@ -32,7 +32,7 @@ export class RecipesService {
   getRecipeById(id: number): Observable<Recipe>{
     return this.http.get(`${API_URL}${id}`)
   }
-
+// apkeist 2 i kintama recipeId
   updateRecipe(recipe: Recipe): Observable<Recipe> {
     return this.http.put(`${API_URL}${recipe.id}`, recipe, this.httpOptions).pipe(
       catchError(this.handleError)
