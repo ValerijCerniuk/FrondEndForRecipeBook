@@ -40,3 +40,16 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+src/app/_services/ingridients.service.spec.ts
+src/app/_services/recipes.service.spec.ts
+src/app/about/about.component.spec.ts
+src/app/home/home.component.spec.ts
+src/app/models/ingridient.spec.ts
+src/app/models/recipe.spec.ts
+src/app/models/recipes-stages.spec.ts
+src/app/nav-bar/nav-bar.component.spec.ts
+src/app/profile/profile.component.spec.ts
+src/app/recipes/add-recipe/add-recipe.component.spec.ts
+src/app/recipes/edit-recipe/edit-recipe.component.spec.ts
+src/app/recipes/show-recipe/show-recipe.component.spec.ts
+src/app/shared/pipes/sort-by.pipe.spec.ts
