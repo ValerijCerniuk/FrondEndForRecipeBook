@@ -1,0 +1,25 @@
+<div class="modal-content">
+ <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit Stage</h4>
+    </div>
+    <div class="modal-body">
+        <form [formGroup]="stageForm">
+      <div class="mb-3">
+        <label for="stage-order" class="form-label">Order</label>
+        <input type="number" class="form-control w-25" id="stage-order" 
+          formControlName="instructionOrder" />
+      </div>
+      <div class="mb-3">
+        <label for="stage-instruction" class="form-label">Description</label>
+        <textarea type="text" class="form-control w-100" id="stage-instruction"
+           formControlName="instruction"></textarea>
+      </div>
+      <p>{{ recipeStage | json }}</p>
+    </form>
+    </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="closeModal('close')">Close</button>
+        <!-- <button type="button" class="btn btn-primary" (click)="closeModal('changes saved!')">Save changes</button> -->
+    </div>
+</div>

@@ -10,42 +10,31 @@
   </div> -->
     <div class="mb-3">
       <label for="recipe-name" class="form-label">Name</label>
-      <input
-        type="text"
-        class="form-control w-25"
-        id="recipe-name"
-        placeholder="{{ curentRecipe.name }}"
-        formControlName="name"
-      />
+      <input type="text" class="form-control w-25" id="recipe-name" placeholder="{{ curentRecipe.name }}"
+        formControlName="name" />
     </div>
 
     <div class="mb-3">
       <label for="recipe-description" class="form-label">Description</label>
-      <textarea
-        type="text"
-        class="form-control w-25"
-        id="recipe-description"
-        placeholder="{{ curentRecipe.description }}"
-        formControlName="description"
-      ></textarea>
+      <textarea type="text" class="form-control w-25" id="recipe-description"
+        placeholder="{{ curentRecipe.description }}" formControlName="description"></textarea>
     </div>
 
     <div class="mb-3">
       <div *ngIf="curentRecipe.recipeStages">
 
-        <ul
-          *ngFor="
+        <ul *ngFor="
             let stage of curentRecipe.recipeStages
               | sortBy: 'asc':'instructionOrder'
-          "
-        >
+          ">
           <li>
             <span> {{ stage.instructionOrder }} ) {{ stage.instruction }}</span>
-          <!-- Button trigger modal -->
-          <button class="btn btn-sm btn-outline-primary" (click)="open(mymodal)">Open My Modal</button>
+            <!--Modal Button trigger -->
+            <button class="btn btn-sm btn-outline-primary" (click)="openModal()">Open My Modal</button>
 
           </li>
         </ul>
+        
       </div>
     </div>
     <div *ngIf="currDiv == 'stageForm'">
@@ -57,54 +46,16 @@
   <div class="mb-3">
     <div *ngIf="curentRecipe.ingredients">
 
-      <ul
-        *ngFor="
+      <ul *ngFor="
           let ingredient of curentRecipe.ingredients | sortBy: 'asc':'name'
-        "
-      >
+        ">
         <li>
           <span>
             {{ ingredient.name }} {{ ingredient.description }}
-            {{ ingredient.amount }}</span
-          >
+            {{ ingredient.amount }}</span>
         </li>
       </ul>
     </div>
-    <button type="submit" value="submit" class="btn btn-primary">Save</button>
-  </div>
+    <!-- <button type="submit" value="submit" class="btn btn-primary">Save</button>
+  </div> -->
 </div>
-
-
-
-    <!-- editStageModal -->
-
-
-
-
-    <ng-template #mymodal let-modal>
-
-      <div class="modal-header">
-
-        <h4 class="modal-title" id="modal-basic-title">Bootstrap Modal</h4>
-
-        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-
-          <span aria-hidden="true">×</span>
-
-        </button>
-
-      </div>
-
-      <div class="modal-body">
-
-        This is example from ItSolutionStuff.com
-
-      </div>
-
-      <div class="modal-footer">
-
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Ok</button>
-
-      </div>
-
-    </ng-template>
