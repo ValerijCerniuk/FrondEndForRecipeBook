@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { Ingridient } from '../models/ingridient';
+import { Ingredient } from '../models/ingredient';
 
 const API_URL = 'http://localhost:8080/api/';
 
@@ -14,7 +14,7 @@ export class IngridientsService {
 
   getAllIngredients(): Observable<any>{
     return this.http
-    .get<Ingridient>(API_URL + 'ingredients/')
+    .get<Ingredient>(API_URL + 'ingredients/')
     .pipe(retry(1),catchError(this.handleError))
   }
 
