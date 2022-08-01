@@ -19,17 +19,16 @@ export class EditRecipeComponent implements OnInit {
 
   curentRecipe: Recipe = {} as Recipe;
   recipeId?: any;
-  currDiv?: string;
   currentStage?: RecipesStage = {} as RecipesStage;
 
-  recipeStage?: RecipesStage = {} as Recipe;
+  recipeStage: RecipesStage = {} as RecipesStage;
 
   recipeForm = new FormGroup({
     name: new FormControl(this.curentRecipe.name, [
       Validators.required,
       Validators.maxLength(40)
     ]),
-    description: new FormControl('', [
+    description: new FormControl(this.curentRecipe.description, [
       Validators.required,
       Validators.maxLength(255)
     ]),
@@ -55,11 +54,6 @@ export class EditRecipeComponent implements OnInit {
   }
 
 
-  showDiv(divVal: string, stage: RecipesStage) {
-    this.currDiv = divVal;
-    this.currentStage = stage
-}
-
   getRecipeById(data: any): void {
     this.recipeService.getRecipeById(data).subscribe(
       (data) => {
@@ -73,11 +67,11 @@ export class EditRecipeComponent implements OnInit {
   }
 // isiaiskint kopdel ir kaip kveciasi  funkcija
   save() {
-    console.warn(this.recipeForm.value);
-    this.curentRecipe = this.recipeForm.value;
-    if (this.curentRecipe !== undefined) {
-      this.recipeService.updateRecipe(this.curentRecipe).subscribe((results) => { this.curentRecipe = results })
-    }
+    // console.warn(this.recipeForm.value);
+    // this.curentRecipe = this.recipeForm.value;
+    // if (this.curentRecipe !== undefined) {
+    //   this.recipeService.updateRecipe(this.curentRecipe).subscribe((results) => { this.curentRecipe = results })
+    // }
   };
 
   saveStade(){
@@ -102,21 +96,4 @@ modalRef.componentInstance.recipeStage = this.currentStage;
       });
     }
   
-    private getDismissReason(reason: any): string {
-  
-      if (reason === ModalDismissReasons.ESC) {
-  
-        return 'by pressing ESC';
-  
-      } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  
-        return 'by clicking on a backdrop';
-  
-      } else {
-  
-        return  `with: ${reason}`;
-  
-      }
-  
-    }
 }

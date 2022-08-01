@@ -1,6 +1,6 @@
-export class Ingridient {
+export class Ingredient {
     id?: number;
     name?: string;
-    amount?: number;
+    amount?: String;
     description?: string;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from '../models/recipe';
 import { RecipesService } from '../_services/recipes.service';
-import { Ingridient } from '../models/ingridient';
+import { Ingredient } from '../models/ingredient';
 
 @Component({
   selector: 'home',
@@ -11,7 +11,7 @@ import { Ingridient } from '../models/ingridient';
 export class HomeComponent implements OnInit {
 
   recipes: Recipe[] = [];
-  ingredients: Ingridient[] = [];
+  ingredients: Ingredient[] = [];
 
   recipe!: any;
   ingridient!: any;

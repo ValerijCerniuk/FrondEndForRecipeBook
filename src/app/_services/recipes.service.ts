@@ -32,6 +32,11 @@ export class RecipesService {
   getRecipeById(id: number): Observable<Recipe>{
     return this.http.get(`${API_URL}${id}`)
   }
+
+  addRecipe(data: Recipe): Observable<Recipe>{
+    return this.http.post(API_URL, data);
+  }
+
 // apkeist 2 i kintama recipeId
   updateRecipe(recipe: Recipe): Observable<Recipe> {
     return this.http.put(`${API_URL}${recipe.id}`, recipe, this.httpOptions).pipe(
