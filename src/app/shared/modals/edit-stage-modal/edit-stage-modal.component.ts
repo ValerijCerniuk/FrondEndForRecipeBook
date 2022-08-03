@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { RecipesStage } from 'src/app/models/recipes-stage';
+import { RecipeStage } from 'src/app/inerfases/recipe-stage';
+
+
 
 @Component({
   selector: 'edit-stage-modal',
@@ -10,7 +12,7 @@ import { RecipesStage } from 'src/app/models/recipes-stage';
 })
 export class EditStageModalComponent implements OnInit {
 
-  @Input() recipeStage?: RecipesStage;
+  @Input() recipeStage?: RecipeStage;
   
   stageForm = new FormGroup({
   

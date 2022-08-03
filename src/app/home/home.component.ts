@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from '../models/recipe';
+import { Ingredient } from '../inerfases/ingredient';
+import { Recipe } from '../inerfases/recipe';
+
 import { RecipesService } from '../_services/recipes.service';
-import { Ingredient } from '../models/ingredient';
+
 
 @Component({
   selector: 'home',

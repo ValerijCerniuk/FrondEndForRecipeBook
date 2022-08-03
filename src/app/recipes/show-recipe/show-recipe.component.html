@@ -4,6 +4,7 @@
     <!-- <label for="id">id: </label>
       <input id="id" type="number" (keyup.enter)="getRecipeById(newId)" placeholder="{{newId}}"> -->
     <a href="/edit-recipe/{{recipeId}}" class="btn btn-primary btn-sm active" role="button">Edit</a>
+    <button (click)="deleteRecipeById(recipeId)" class="btn btn-danger btn-sm active" >Delete</button>
 
 
   </div>

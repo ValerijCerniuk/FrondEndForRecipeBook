@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { Recipe } from 'src/app/models/recipe';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Recipe } from 'src/app/inerfases/recipe';
 import { RecipesService } from 'src/app/_services/recipes.service';
 
 @Component({
@@ -14,7 +14,8 @@ export class ShowRecipeComponent implements OnInit {
 
   constructor(
     private recipeService: RecipesService,
-    private activatedroute: ActivatedRoute
+    private activatedroute: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +37,17 @@ export class ShowRecipeComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  deleteRecipeById(recipeId: number){
+    this.recipeService.delete(recipeId).subscribe({
+      next: (res) => {
+        console.log(res);
+        this.router.navigate(['/home']);
+      },
+      error: (e) => console.error(e)
+    });
+    
   }
 
 }

@@ -1,11 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
-import { Recipe } from 'src/app/models/recipe';
+
 import { RecipesService } from '../../_services/recipes.service';
-import { RecipesStage } from '../../models/recipes-stage';
+
 import { NgbModal, NgbActiveModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { EditStageModalComponent } from 'src/app/shared/modals/edit-stage-modal/edit-stage-modal.component';
+import { Recipe } from 'src/app/inerfases/recipe';
+import { RecipeStage } from 'src/app/inerfases/recipe-stage';
+
 
 
 @Component({
@@ -19,9 +22,9 @@ export class EditRecipeComponent implements OnInit {
 
   curentRecipe: Recipe = {} as Recipe;
   recipeId?: any;
-  currentStage?: RecipesStage = {} as RecipesStage;
+  currentStage?: RecipeStage = {} as RecipeStage;
 
-  recipeStage: RecipesStage = {} as RecipesStage;
+  recipeStage: RecipeStage = {} as RecipeStage;
 
   recipeForm = new FormGroup({
     name: new FormControl(this.curentRecipe.name, [

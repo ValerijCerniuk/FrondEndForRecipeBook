@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddRecipeComponent } from './recipes/add-recipe/add-recipe.component';
 import { EditRecipeComponent} from './recipes/edit-recipe/edit-recipe.component';
 import { ShowRecipeComponent } from './recipes/show-recipe/show-recipe.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AboutComponent } from './about/about.component';
 import { SortByPipe } from './shared/pipes/sort-by.pipe';
 import { NgbActiveModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -35,6 +35,8 @@ import { EditStageModalComponent } from './shared/modals/edit-stage-modal/edit-s
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
+    FormsModule,
+    ReactiveFormsModule
   
   ],
   providers: [SortByPipe,NgbActiveModal],

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, retry, tap, throwError } from 'rxjs';
-import { Recipe } from '../models/recipe';
-import { RecipesStage } from '../models/recipes-stage';
+import { Recipe } from '../inerfases/recipe';
+import { RecipeStage } from '../inerfases/recipe-stage';
 
 const API_URL = 'http://localhost:8080/api/recipes/';
 
@@ -19,29 +19,29 @@ export class RecipesService {
     .pipe(retry(1),catchError(this.handleError))
   }
 
-  createRecipe(data: Recipe): Observable<Recipe>{
+  createRecipe(data: Recipe): Observable<any>{
     return this.http.post(API_URL , data)
   }
 
-  getAllRecipesStages(): Observable<RecipesStage>{
+  getAllRecipesStages(): Observable<any>{
     return this.http
-    .get<RecipesStage>(API_URL + 'recipe-stages/')
+    .get<RecipeStage>(API_URL + 'recipe-stages/')
     .pipe(retry(1),catchError(this.handleError))
   }
 
-  getRecipeById(id: number): Observable<Recipe>{
-    return this.http.get(`${API_URL}${id}`)
-  }
-
-  addRecipe(data: Recipe): Observable<Recipe>{
-    return this.http.post(API_URL, data);
+  getRecipeById(id: number): Observable<any>{
+    return this.http.get(API_URL + id)
   }
 
 // apkeist 2 i kintama recipeId
-  updateRecipe(recipe: Recipe): Observable<Recipe> {
-    return this.http.put(`${API_URL}${recipe.id}`, recipe, this.httpOptions).pipe(
+  updateRecipe(recipe: Recipe): Observable<any> {
+    return this.http.put(API_URL + recipe.id, recipe, this.httpOptions).pipe(
       catchError(this.handleError)
     );
+  }
+
+  delete(id: any): Observable<any> {
+    return this.http.delete(API_URL + id);
   }
 
   httpOptions = {
