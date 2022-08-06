@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, Observable, retry, tap, throwError } from 'rxjs';
-import { Recipe } from '../inerfases/recipe';
-import { RecipeStage } from '../inerfases/recipe-stage';
+import { Recipe } from '../inerfaces/recipe';
+import { RecipeStage } from '../inerfaces/recipe-stage';
 
 const API_URL = 'http://localhost:8080/api/recipes/';
 

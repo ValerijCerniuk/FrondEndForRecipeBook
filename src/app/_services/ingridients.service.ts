@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, retry, throwError } from 'rxjs';
-import { Ingredient } from '../inerfases/ingredient';
+import { Ingredient } from '../inerfaces/ingredient';
 
 
 const API_URL = 'http://localhost:8080/api/';

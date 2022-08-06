@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingredient } from '../inerfases/ingredient';
-import { Recipe } from '../inerfases/recipe';
+import { Ingredient } from '../inerfaces/ingredient';
+import { Recipe } from '../inerfaces/recipe';
 
 import { RecipesService } from '../_services/recipes.service';
 

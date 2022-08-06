@@ -6,6 +6,8 @@ export interface Recipe {
     id: number;
     name: string;
     description: string;
+    photo1: string;
+    photo2: string;
     recipeStages: RecipeStage[];
     ingredients: Ingredient[];
 }

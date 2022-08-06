@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
-import { RecipeStage } from 'src/app/inerfases/recipe-stage';
+import { RecipeStage } from 'src/app/inerfaces/recipe-stage';
 
 
 

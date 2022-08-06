@@ -6,8 +6,8 @@ import { RecipesService } from '../../_services/recipes.service';
 
 import { NgbModal, NgbActiveModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { EditStageModalComponent } from 'src/app/shared/modals/edit-stage-modal/edit-stage-modal.component';
-import { Recipe } from 'src/app/inerfases/recipe';
-import { RecipeStage } from 'src/app/inerfases/recipe-stage';
+import { Recipe } from 'src/app/inerfaces/recipe';
+import { RecipeStage } from 'src/app/inerfaces/recipe-stage';
 
 
 
