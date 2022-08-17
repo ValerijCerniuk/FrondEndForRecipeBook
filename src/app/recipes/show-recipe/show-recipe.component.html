@@ -1,18 +1,27 @@
-<p>show-recipe works!</p>
+
 <div class="container">
   <div>
     <!-- <label for="id">id: </label>
       <input id="id" type="number" (keyup.enter)="getRecipeById(newId)" placeholder="{{newId}}"> -->
     <a href="/edit-recipe/{{recipeId}}" class="btn btn-primary btn-sm active" role="button">Edit</a>
     <button (click)="deleteRecipeById(recipeId)" class="btn btn-danger btn-sm active" >Delete</button>
-
-
+<br>
+<hr>
   </div>
-
+<div>
+<span>
+   <img *ngIf="imageBlob1" [src]="imageBlob1" alt="recipe photo 1" width="200">
+   <img *ngIf="imageBlob2" [src]="imageBlob2" alt="recipe photo 2" width="200">
+</span>
+</div>
   <p>{{ curentRecipe.name }}</p>
   <div *ngIf="curentRecipe.description != null">
     <h4>Description:</h4>
     <p>{{ curentRecipe.description }}</p>
+  </div>
+  <div>
+
+
   </div>
   <div class="mt-3 text-dark">
     <div *ngIf="curentRecipe.ingredients != null">

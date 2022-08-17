@@ -3,6 +3,7 @@ import { Ingredient } from '../inerfaces/ingredient';
 import { Recipe } from '../inerfaces/recipe';
 
 import { RecipesService } from '../_services/recipes.service';
+import { FileUploadService } from '../_services/file-upload.service';
 
 
 @Component({
@@ -15,18 +16,36 @@ export class HomeComponent implements OnInit {
   recipes: Recipe[] = [];
   ingredients: Ingredient[] = [];
 
-  recipe!: any;
+  recipe!: Recipe;
   ingridient!: any;
   currentRecipe = null;
   currentIndex = -1;
   name = '';
 
-  constructor(private recipeServise: RecipesService) { }
+  sanitizer: any;
+
+
+
+  constructor(private recipeServise: RecipesService,
+    private fileUpload: FileUploadService) { }
 
     ngOnInit(): void {
       this.retrieveRecipes();
-    }
 
+
+
+    }
+    // image part
+
+  getRecipePhoto(photoId:any ) {
+    this.fileUpload.fetchRecipeImage(photoId)
+      .subscribe((result: any) => {
+        let objectURL = URL.createObjectURL(result);
+        return this.sanitizer.bypassSecurityTrustUrl(objectURL);
+      });
+  }
+
+    // recipe part
     retrieveRecipes(): void {
       this.recipeServise.getAllRecipes()
         .subscribe(
@@ -50,4 +69,7 @@ export class HomeComponent implements OnInit {
       this.currentIndex = index;
 
     }
+
+
+
 }
